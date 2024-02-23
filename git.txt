@@ -1,0 +1,105 @@
+git add .
+git commit -m ""
+git push origin main
+git diff              show difference from previous
+git stash             if changed file is stashed then the file will be saved  somewhere(Stores changes in a local stack)
+git stash pop          to remove stash
+git stash list         listing stashed files details
+git stash save ""       we can save the file as we need 
+git status 
+git log --oneline
+git restore index.html(revert,reset)
+git restore --staged index.html
+git branch
+git branch main2
+git checkout main2
+git merge main2
+git branch -d main2 (merged)
+git branch -D main (forced to delete)
+git pull origin main
+
+example in github 
++p index                #in github portal
+git pull origin main     #in cmd
+
+
+
+..........................................
+
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/rajeshwari-20csa36/hello.git
+git push -u origin main
+..............................................
+
+git branch ---merged
+git rebase origin main
+git tag v0.1(small updates)
+git push origin v0.1
+
+git clone #Repository link                 ----creates a copy of an existing Git repository onto your local computer. This command fetches entire repository history, including all branches                                                    						and tags, allowing you to immediately begin working with the codebase.
+
+
+to switch head from one tag to other tag use this comment : git checkout #tag 2 id or commit id
+
+rebase conflict :
+Remove the conflict markers in ide (<<<<<<<, =======, >>>>>>>)
+git add file
+git rebase --continue
+
+
+
+Merge:
+Combines histories: Merging brings changes from one branch into another, creating a merge commit to show the integration point.
+Good for teamwork: Use merge when collaborating with others to keep track of everyone's contributions.
+
+Rebase:
+Straightens history: Rebasing rewrites the commit history, placing your changes on top of the branch you're rebasing onto.
+Great for solo work: Use rebase when working alone to keep a clean, linear history without extra merge commits.
+
+In short, use merge for teamwork to combine histories, and rebase for solo projects to maintain a tidy commit history. 
+Just remember to be cautious with rebasing on shared branches to avoid confusion among collaborators
+
+
+
+
+
+Git Squash:
+Purpose: Combines multiple commits into a single, more organized commit.
+Usage: Useful for cleaning up commit history before merging changes into the main branch.
+Command: git rebase -i followed by squashing commits or using git merge --squash.
+
+Git Revert:
+Purpose: Creates a new commit that undoes the changes of a specific commit.
+Usage: Ideal for reverting a single commit without altering the commit history.
+Command: git revert <commit_hash>.
+
+Git Reset:
+Purpose: Moves the HEAD and branch pointer to a specific commit, potentially discarding changes.
+Usage: Useful for undoing local changes or resetting the repository to a previous state.
+Commands:
+git reset --soft <commit_hash>: Moves HEAD to a specific commit, keeping changes staged.
+git reset --mixed <commit_hash>: Moves HEAD to a specific commit, unstaging changes.
+git reset --hard <commit_hash>: Moves HEAD to a specific commit, discarding all changes.
+
+
+
+When to Use Each Command
+
+Use Git Squash:
+When you want to tidy up your commit history before merging branches.
+To combine related commits into a single coherent change.
+
+Use Git Revert:
+When you need to undo the changes introduced by a specific commit without altering history.
+To safely revert individual commits without affecting other parts of the project.
+
+Use Git Reset:
+When you want to move the current branch pointer to an earlier commit.
+To discard changes and start fresh from a specific point in history.
+
+
+note: pull before push 
+ If something goes wrong during rebasing, it's easy to undo by using git reflog
